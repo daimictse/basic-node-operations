@@ -1,0 +1,182 @@
+Questions
+1. sort: sort text files by lines and output the result
+   output:
+
+
+
+
+
+			break;
+			break;
+			break;
+			break;
+			commandLibrary.cat(userInputArray.slice(1));
+			commandLibrary.echo(userInputArray.slice(1).join(" "));
+			commandLibrary.sort(userInputArray.slice(1));
+			commandLibrary.wc(userInputArray.slice(1));
+			const byteCount = data.length;
+			const newLineCount = data.split("\n").length-1;
+			const wordCount = data.split(/\s+/).length-1;
+			done("   " + newLineCount + "   " + wordCount + "   " + byteCount + " " + fileName);
+			done(data);
+			done(data.split("\n").sort().join("\n"));
+			if (err) throw err;
+			if (err) throw err;
+			if (err) throw err;
+		case "cat":
+		case "echo":
+		case "sort":
+		case "wc":
+		const fileName = fullPath[0];
+		const fileName = fullPath[0];
+		const fileName = fullPath[0];
+		done(userInput);
+		fs.readFile(fileName, 'utf8', (err, data) => {
+		fs.readFile(fileName, 'utf8', (err, data) => {
+		fs.readFile(fileName, (err, data) => {
+		});
+		});
+		});
+	"cat": function(fullPath) {
+	"echo": function(userInput) {
+	"sort": function(fullPath) {
+	"wc": function(fullPath) {
+	const command = userInputArray[0];
+	const userInputArray = userInput.split(" ");
+	process.stdout.write('\nprompt > ');
+	process.stdout.write(output);
+	switch (command) {
+	}
+	}
+	},
+	},
+	},
+const commandLibrary = {
+const fs = require("fs");
+function done(output) {
+function evaluateCmd(userInput) {
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+}
+}
+};
+
+   wc: count and output the number of new line, word and byte in a file 
+   output:
+      59     151    1441 commands.js
+
+   uniq: reads a file, compare adjacent lines, filter repeated lines and writes out unique lines 
+   output:
+const fs = require("fs");
+
+function done(output) {
+	process.stdout.write(output);
+	process.stdout.write('\nprompt > ');
+}
+
+function evaluateCmd(userInput) {
+	const userInputArray = userInput.split(" ");
+	const command = userInputArray[0];
+
+	switch (command) {
+		case "echo":
+			commandLibrary.echo(userInputArray.slice(1).join(" "));
+			break;
+		case "cat":
+			commandLibrary.cat(userInputArray.slice(1));
+			break;
+		case "sort":
+			commandLibrary.sort(userInputArray.slice(1));
+			break;
+		case "wc":
+			commandLibrary.wc(userInputArray.slice(1));
+			break;
+	}
+}
+
+const commandLibrary = {
+	"echo": function(userInput) {
+		done(userInput);
+	},
+	"cat": function(fullPath) {
+		const fileName = fullPath[0];
+		fs.readFile(fileName, (err, data) => {
+			if (err) throw err;
+			done(data);
+		});
+	},
+	"sort": function(fullPath) {
+		const fileName = fullPath[0];
+		fs.readFile(fileName, 'utf8', (err, data) => {
+			if (err) throw err;
+			done(data.split("\n").sort().join("\n"));
+		});
+	},
+	"wc": function(fullPath) {
+		const fileName = fullPath[0];
+		fs.readFile(fileName, 'utf8', (err, data) => {
+			if (err) throw err;
+			const newLineCount = data.split("\n").length-1;
+			const wordCount = data.split(/\s+/).length-1;
+			const byteCount = data.length;
+			done("   " + newLineCount + "   " + wordCount + "   " + byteCount + " " + fileName);
+		});
+	}
+};
+
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+
+2. sort commands.js | uniq: the file commands.js gets sorted and the result fed to uniq. Since the file is sorted, any duplicate lines on commands.js would be filter, producing a result with less lines than 'uniq commands.js'
+   output:
+
+			break;
+			commandLibrary.cat(userInputArray.slice(1));
+			commandLibrary.echo(userInputArray.slice(1).join(" "));
+			commandLibrary.sort(userInputArray.slice(1));
+			commandLibrary.wc(userInputArray.slice(1));
+			const byteCount = data.length;
+			const newLineCount = data.split("\n").length-1;
+			const wordCount = data.split(/\s+/).length-1;
+			done("   " + newLineCount + "   " + wordCount + "   " + byteCount + " " + fileName);
+			done(data);
+			done(data.split("\n").sort().join("\n"));
+			if (err) throw err;
+		case "cat":
+		case "echo":
+		case "sort":
+		case "wc":
+		const fileName = fullPath[0];
+		done(userInput);
+		fs.readFile(fileName, 'utf8', (err, data) => {
+		fs.readFile(fileName, (err, data) => {
+		});
+	"cat": function(fullPath) {
+	"echo": function(userInput) {
+	"sort": function(fullPath) {
+	"wc": function(fullPath) {
+	const command = userInputArray[0];
+	const userInputArray = userInput.split(" ");
+	process.stdout.write('\nprompt > ');
+	process.stdout.write(output);
+	switch (command) {
+	}
+	},
+const commandLibrary = {
+const fs = require("fs");
+function done(output) {
+function evaluateCmd(userInput) {
+module.exports.commandLibrary = commandLibrary;
+module.exports.evaluateCmd = evaluateCmd;
+}
+};
+
+6.
+function reverseString(inputString) {
+	let arr = inputString.split(' ');
+	let newArr = [];
+	arr.forEach((element) => {
+		newArr.push(element.split('').reverse().join(''));
+	});
+	return newArr.join(' ');
+}
